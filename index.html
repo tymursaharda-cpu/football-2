@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arcade Football 1v1</title>
+    <!-- PWA manifest and theme definitions -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#1099bb" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- The game will be rendered into this container by PixiJS -->
+    <div id="game-container"></div>
+
+    <!-- Mobile control overlay. These buttons are hidden on desktop and
+         displayed on touch devices to control left/right movement and jumping. -->
+    <div id="mobile-controls">
+      <button id="btn-left">◀︎</button>
+      <button id="btn-right">▶︎</button>
+      <button id="btn-jump">⤒</button>
+    </div>
+    <!-- Third‑party libraries loaded from trusted CDNs. These are pinned to
+         specific versions to ensure deterministic builds. The corresponding
+         service worker precache list includes these URLs so they are
+         available offline. -->
+    <script src="https://cdn.jsdelivr.net/npm/pixi.js@8.0.0/dist/pixi.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@rive-app/canvas@2.25.2/rive.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/box2d-wasm@7.0.0/dist/umd/Box2D.js"></script>
+    <!-- Main entry point for our game logic. See main.js for details. -->
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

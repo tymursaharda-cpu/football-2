@@ -1,0 +1,57 @@
+/*
+ * Global styles for the Arcade Football 1v1 prototype.
+ * The body takes up the full viewport and hides scrollbars to
+ * ensure the game canvas fills the screen. Additional UI styling
+ * will be added in later iterations.
+ */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #1099bb;
+  font-family: sans-serif;
+}
+
+#game-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile on‑screen controls. Displayed as large buttons near the bottom
+ * of the viewport. Hidden on devices without touch support via a
+ * media query. */
+#mobile-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  z-index: 10;
+  pointer-events: none; /* container itself shouldn't block interaction */
+}
+
+#mobile-controls button {
+  pointer-events: auto; /* enable pointer events on buttons */
+  width: var(--btn-size, 60px);
+  height: var(--btn-size, 60px);
+  font-size: 24px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  backdrop-filter: blur(4px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  /* Hide mobile controls on desktop devices */
+  #mobile-controls {
+    display: none;
+  }
+}
